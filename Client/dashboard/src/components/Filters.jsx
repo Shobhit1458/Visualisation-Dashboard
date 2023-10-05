@@ -12,7 +12,7 @@ const Filters = ({ setMainData }) => {
     // func to fetch the filtered data by year and update the state
     const getDataFromDB = async(year) => {
         try{
-            const response = await axios.get(`https://dashboard-6bfs.onrender.com/api/data/year/${year}`);
+            const response = await axios.get(`http://localhost:5001/api/data/year/${year}`);
             setMainData(response.data.data)
         }
         catch(e){
@@ -22,7 +22,7 @@ const Filters = ({ setMainData }) => {
     // func to handle the "reset filters button" by making another api call and update state 
     const handleReset = async() => {
         try{
-            const response = await axios.get("https://dashboard-6bfs.onrender.com/api/data/all");
+            const response = await axios.get("http://localhost:5001/api/data/all");
             setMainData(response.data.data)
         }
         catch(e){
