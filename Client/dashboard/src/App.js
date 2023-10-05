@@ -13,8 +13,9 @@ function App() {
     //asynchronous function to fetch data from server and updating the state
     const getDataFromDB = async() => {
         try{
-            const response = await axios.get("https://dashboard-6bfs.onrender.com/api/data/all");
-            setMainData(response.data.data)
+            const response = await axios.get("http://localhost:5001/api/data/all");
+            // console.log(response.data.data);
+            setMainData(response.data.data);
         }
         catch(e){
             console.log(e)
